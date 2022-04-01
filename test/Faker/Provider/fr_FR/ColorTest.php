@@ -12,8 +12,12 @@ final class ColorTest extends TestCase
 {
     public function testColor()
     {
-        $color = $this->faker->colorName();
-        self::assertIsString($color);
+        self::assertIsString($this->faker->colorName());
+    }
+
+    public function testAllColors()
+    {
+        self::assertIsString($this->faker->safeColorName());
     }
 
     protected function getProviders(): iterable
