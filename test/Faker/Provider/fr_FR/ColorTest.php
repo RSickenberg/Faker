@@ -20,6 +20,18 @@ final class ColorTest extends TestCase
         self::assertIsString($this->faker->safeColorName());
     }
 
+    public function testSafeColorName()
+    {
+        $color = new Color($this->faker);
+        self::assertMatchesRegularExpression('/^[\w]+$/', $color::safeColorName());
+    }
+
+    public function testColorName()
+    {
+        $color = new Color($this->faker);
+        self::assertMatchesRegularExpression('/^[\w]+$/', $color::colorName());
+    }
+
     protected function getProviders(): iterable
     {
         yield new Color($this->faker);
