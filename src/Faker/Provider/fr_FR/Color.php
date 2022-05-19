@@ -5,7 +5,7 @@ namespace Faker\Provider\fr_FR;
 class Color extends \Faker\Provider\Color
 {
     protected static $safeColorNames = [
-        'noir', 'maron', 'vert', 'marine', 'olive',
+        'noir', 'marron', 'vert', 'marine', 'olive',
         'violet', 'turquoise', 'citron', 'bleu',
         'argenté', 'gris', 'jaune', 'fuchsia', 'blanc',
     ];
