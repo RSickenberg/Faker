@@ -10,26 +10,16 @@ use Faker\Test\TestCase;
  */
 final class ColorTest extends TestCase
 {
-    public function testColor()
+    public function testColorName()
     {
-        self::assertIsString($this->faker->colorName());
-    }
-
-    public function testAllColors()
-    {
-        self::assertIsString($this->faker->safeColorName());
+        self::assertEquals('Mandarine', $this->faker->colorName());
+        self::assertEquals('Acajou', $this->faker->colorName());
     }
 
     public function testSafeColorName()
     {
-        $color = new Color($this->faker);
-        self::assertMatchesRegularExpression('/^[\w]+$/', $color::safeColorName());
-    }
-
-    public function testColorName()
-    {
-        $color = new Color($this->faker);
-        self::assertMatchesRegularExpression('/^[\w]+$/', $color::colorName());
+        self::assertEquals('bleu', $this->faker->safeColorName());
+        self::assertEquals('noir', $this->faker->safeColorName());
     }
 
     protected function getProviders(): iterable
